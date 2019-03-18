@@ -4,7 +4,12 @@ export const StoreContext = createContext({});
 const initialState = {
     rows: 2,
     cols: 2,
-    data: [],
+    data: [
+        ["1","2", "3"],
+        ["4","5", "6"],
+        ["7","8", "9"]
+
+    ],
     types: [],
     required: []   
 }
@@ -16,6 +21,11 @@ function reducer(state, action){
         }
         case 'addCol' : {
             return {...state, cols: state.cols + 1}
+        }
+        case 'setValue': {
+                const newData = {...state};
+                newData.data[action.col][action.row] = action.value;
+                return newData;
         }
         default: {
             return state;

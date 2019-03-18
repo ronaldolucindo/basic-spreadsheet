@@ -14,6 +14,7 @@ function Table(props) {
       <Row 
         key={row}
         row={row}
+        col={state.cols+1}
       />
 
 
