@@ -9,7 +9,7 @@ function Row(props) {
 
   for(let col = 0; col <= state.cols; col++){
     cells.push(
-      <Cell col={col} row={props.row} key={`${props.row}-${col}`} />
+      <Cell col={col} row={props.row} key={`${col}-${props.row}`} />
       
     )
   }  

@@ -1,32 +1,26 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 import Row from "../Row/";
-import {StoreContext} from "../../store"
-
+import { StoreContext } from "../../store";
 
 function Table(props) {
   const [state, dispatch] = useContext(StoreContext);
 
   // console.log(state);
   const rows = [];
-  for(let row = 0; row <= state.rows; row++){
+  for (let row = 0; row <= state.rows; row++) {
     rows.push(
-      <Row 
+      <Row
         key={row}
+        // col={col}
         row={row}
-        col={state.cols+1}
       />
-
-
-    )
-    
+    );
   }
   return (
     <div className="table-responsive">
       <table className="table table-bordered table-sm">
-        <tbody>
-          {rows}
-        </tbody>
+        <tbody>{rows}</tbody>
       </table>
     </div>
   );
