@@ -7,7 +7,7 @@ function Row(props) {
 
   const cells =[];
 
-  for(let col = 0; col <= state.cols; col++){
+  for(let col = 0; col < state.cols; col++){
     cells.push(
       <Cell col={col} row={props.row} key={`${col}-${props.row}`} />
       

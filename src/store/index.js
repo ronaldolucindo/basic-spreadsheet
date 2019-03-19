@@ -2,8 +2,8 @@ import React, {createContext, useReducer} from "react";
 
 export const StoreContext = createContext({});
 const initialState = {
-    rows: 2,
-    cols: 2,
+    rows: 3,
+    cols: 3,
     data: [
         ["1","2", "3"],
         ["4","5", "6"],
@@ -17,16 +17,23 @@ const initialState = {
 function reducer(state, action){
     switch(action.type){
         case 'addRows':{
-            return {...state, rows: state.rows + 10 };
+            const newData = {...state};
+            newData.rows += 10;
+            for(let i = 0; i < 10; i++){
+                const emptyRow = new Array(state.cols).fill('');
+                newData.data.push(emptyRow);
+            }
+            return newData;
         }
         case 'addCol' : {
             return {...state, cols: state.cols + 1}
         }
         case 'setValue': {
                 const newData = {...state};
-                newData.data[action.col][action.row] = action.value;
+                newData.data[action.row][action.col] = action.value;
                 return newData;
         }
+    
         default: {
             return state;
         }
