@@ -4,6 +4,7 @@ export const StoreContext = createContext({});
 const initialState = {
     rows: 3,
     cols: 3,
+    titles: ["num1", "num2", "num3"],
     data: [
         ["1","2", "3"],
         ["4","5", "6"],
@@ -32,6 +33,11 @@ function reducer(state, action){
                 const newData = {...state};
                 newData.data[action.row][action.col] = action.value;
                 return newData;
+        }
+        case 'setTitle': {
+            const newData = {...state};
+            newData.titles[action.col] = action.value;
+            return newData;
         }
     
         default: {

@@ -1,10 +1,16 @@
-.cell-input{
-    width: 100%;
-    border: none;
+.cell-input {
+  width: 100%;
+  border: none;
 }
-.index-cell{
-    width: 50px;
-    text-align: center;
-
-
+.cell-title-input {
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+}
+.index-cell {
+  width: 50px;
+  text-align: center;
 }

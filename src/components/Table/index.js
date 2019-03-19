@@ -8,7 +8,8 @@ function Table(props) {
 
   // console.log(state);
   const rows = [];
-  for (let row = 0; row < state.rows; row++) {
+  // 1 more row for columns titles
+  for (let row = 0; row <= state.rows; row++) {
     rows.push(
       <Row
         key={row}

@@ -6,8 +6,8 @@ function Row(props) {
   const [state, dispatch] = useContext(StoreContext);
 
   const cells =[];
-
-  for(let col = 0; col < state.cols; col++){
+  // 1 more column for row index
+  for(let col = 0; col <= state.cols; col++){
     cells.push(
       <Cell col={col} row={props.row} key={`${col}-${props.row}`} />
       

@@ -8,22 +8,42 @@ function Cell(props) {
   const handleChange = e => {
     dispatch({
       type: "setValue",
-      col: props.col,
-      row: props.row,
+      col: props.col - 1,
+      row: props.row - 1,
       value: e.target.value
     });
   };
 
-  // if (props.col === 0) {
-  //   return <td className="bg-light index-cell">{props.row + 1}</td>;
-  // }
+  const handleTitleChange = e => {
+    dispatch({
+      type: "setTitle",
+      col: props.col - 1,
+      value: e.target.value
+    });
+  };
+
+  if (props.col === 0) {
+    return <td className="bg-light index-cell">{props.row + 1}</td>;
+  }
+  if (props.row === 0) {
+    return (
+      <td className="bg-secondary">
+        <input
+          onChange={handleTitleChange}
+          className="cell-title-input"
+          type="text"
+          value={state.titles[props.col - 1]}
+        />
+      </td>
+    );
+  }
   return (
     <td>
       <input
         onChange={handleChange}
         className="cell-input"
         type="text"
-        value={state.data[props.row][props.col]}
+        value={state.data[props.row - 1][props.col - 1]}
       />
     </td>
   );
