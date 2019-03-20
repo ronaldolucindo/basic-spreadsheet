@@ -42,7 +42,7 @@ function Cell(props) {
       <input
         onChange={handleChange}
         className="cell-input"
-        type="text"
+        type={state.types[props.col -1]}
         value={state.data[props.row - 1][props.col - 1]}
       />
     </td>

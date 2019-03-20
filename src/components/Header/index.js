@@ -16,7 +16,7 @@ function Header() {
       </ul>
       <form className="form-inline">
         <button className="btn btn-outline-primary my-2 mx-1 my-sm-0 right">
-          Add Collumn
+          Add Column
         </button>
         <button className="btn btn-outline-success my-2 mx-1 my-sm-0 right">
           Save

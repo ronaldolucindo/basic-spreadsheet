@@ -11,7 +11,7 @@ const initialState = {
         ["7","8", "9"]
 
     ],
-    types: [],
+    types: ["number", "date", "text"],
     required: []   
 }
 
