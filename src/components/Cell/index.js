@@ -22,6 +22,18 @@ function Cell(props) {
     });
   };
 
+  const handleTitleBlur = e => {
+    !e.target.value ? e.target.classList.add("invalid-cell") : e.target.classList.remove("invalid-cell");
+  }
+  const handleCellBlur = e => {
+    if(state.required[props.col-1] && !e.target.value){
+      e.target.classList.add("invalid-cell");
+    }
+    else{
+      e.target.classList.remove("invalid-cell")
+    }
+  }
+
   if (props.col === 0) {
     return <td className="bg-light index-cell">{props.row + 1}</td>;
   }
@@ -30,6 +42,7 @@ function Cell(props) {
       <td className="bg-secondary">
         <input
           onChange={handleTitleChange}
+          onBlur={handleTitleBlur}
           className="cell-title-input"
           type="text"
           value={state.titles[props.col - 1]}
@@ -41,6 +54,7 @@ function Cell(props) {
     <td>
       <input
         onChange={handleChange}
+        onBlur={handleCellBlur}
         className="cell-input"
         type={state.types[props.col -1]}
         value={state.data[props.row - 1][props.col - 1]}

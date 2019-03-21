@@ -12,7 +12,7 @@ const initialState = {
 
     ],
     types: ["number", "date", "text"],
-    required: []   
+    required: [false, false, true]   
 }
 
 function reducer(state, action){

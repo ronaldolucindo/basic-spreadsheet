@@ -14,3 +14,7 @@
   width: 50px;
   text-align: center;
 }
+
+.invalid-cell {
+    background-color: var(--danger);
+}
