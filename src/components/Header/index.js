@@ -75,13 +75,13 @@ function Header() {
         >
           Add Column
         </button>
-        <button className="btn btn-outline-success my-2 mx-1 my-sm-0 right">
+        <button onClick={() => dispatch({type: 'saveSpreadsheet'})} className="btn btn-outline-success my-2 mx-1 my-sm-0 right">
           Save
         </button>
       </div>
       <Modal isOpen={modal} toggle={toggleModal}>
         <ModalHeader toggle={toggleModal}>Add new column</ModalHeader>
-        <form className="needs-validation" novalidate>
+        <form className="needs-validation" noValidate>
           <ModalBody>
             <div className="form-group">
               <label htmlFor="columnName">Name</label>

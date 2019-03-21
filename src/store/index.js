@@ -48,6 +48,10 @@ function reducer(state, action){
             newData.titles[action.col] = action.value;
             return newData;
         }
+        case 'saveSpreadsheet': {
+            localStorage.setItem('spreadsheet', JSON.stringify(state));
+            return state;
+        }
     
         default: {
             return state;
