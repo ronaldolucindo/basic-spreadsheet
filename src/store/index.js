@@ -26,8 +26,17 @@ function reducer(state, action){
             }
             return newData;
         }
-        case 'addCol' : {
-            return {...state, cols: state.cols + 1}
+        case 'addColumn' : {
+            const newData = {...state};
+            newData.cols += 1;
+            for(let i = 0; i < state.rows; i++){
+                const emptyCell = "";
+                newData.data[i].push(emptyCell);
+            }
+            newData.titles.push(action.columnName);
+            newData.types.push(action.columnType);
+            newData.required.push(action.columnRequired);
+            return newData;
         }
         case 'setValue': {
                 const newData = {...state};
