@@ -4,7 +4,7 @@ import Row from "../Row/";
 import { StoreContext } from "../../store";
 
 function Table(props) {
-  const [state, dispatch] = useContext(StoreContext);
+  const [state] = useContext(StoreContext);
   if (state.cols === 0) {
     return null;
   }

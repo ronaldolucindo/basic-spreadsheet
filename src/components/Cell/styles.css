@@ -16,5 +16,5 @@
 }
 
 .invalid-cell {
-    background-color: var(--danger);
+  background-color: var(--danger);
 }

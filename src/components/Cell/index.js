@@ -8,8 +8,8 @@ function Cell(props) {
   const handleChange = e => {
     dispatch({
       type: "setValue",
-      col: props.col - 1,
-      row: props.row - 1,
+      col: props.col - 1, //first column is index column
+      row: props.row - 1, //first row is titles row
       value: e.target.value
     });
   };
@@ -23,16 +23,17 @@ function Cell(props) {
   };
 
   const handleTitleBlur = e => {
-    !e.target.value ? e.target.classList.add("invalid-cell") : e.target.classList.remove("invalid-cell");
-  }
+    !e.target.value
+      ? e.target.classList.add("invalid-cell")
+      : e.target.classList.remove("invalid-cell");
+  };
   const handleCellBlur = e => {
-    if(state.required[props.col-1] && !e.target.value){
+    if (state.required[props.col - 1] && !e.target.value) {
       e.target.classList.add("invalid-cell");
+    } else {
+      e.target.classList.remove("invalid-cell");
     }
-    else{
-      e.target.classList.remove("invalid-cell")
-    }
-  }
+  };
 
   if (props.col === 0) {
     return <td className="bg-light index-cell">{props.row + 1}</td>;
@@ -56,7 +57,7 @@ function Cell(props) {
         onChange={handleChange}
         onBlur={handleCellBlur}
         className="cell-input"
-        type={state.types[props.col -1]}
+        type={state.types[props.col - 1]}
         value={state.data[props.row - 1][props.col - 1]}
       />
     </td>
