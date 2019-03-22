@@ -6,9 +6,14 @@ function Footer() {
 
   return (
     <nav className="navbar navbar-light bg-light fixed-bottom">
-      <button onClick={() => dispatch({type: 'addRows'})} className="mx-auto btn btn-outline-primary my-2 my-sm-0">
-        Add 10 rows
-      </button>
+      {state.cols > 0 && (
+        <button
+          onClick={() => dispatch({ type: "addRows" })}
+          className="mx-auto btn btn-outline-primary my-2 my-sm-0"
+        >
+          Add 10 rows
+        </button>
+      )}
     </nav>
   );
 }

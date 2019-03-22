@@ -75,9 +75,14 @@ function Header() {
         >
           Add Column
         </button>
-        <button onClick={() => dispatch({type: 'saveSpreadsheet'})} className="btn btn-outline-success my-2 mx-1 my-sm-0 right">
-          Save
-        </button>
+        {state.cols > 0 && (
+          <button
+            onClick={() => dispatch({ type: "saveSpreadsheet" })}
+            className="btn btn-outline-success my-2 mx-1 my-sm-0 right"
+          >
+            Save
+          </button>
+        )}
       </div>
       <Modal isOpen={modal} toggle={toggleModal}>
         <ModalHeader toggle={toggleModal}>Add new column</ModalHeader>
@@ -127,7 +132,6 @@ function Header() {
           </ModalBody>
           <ModalFooter>
             <button
-              // onClick={toggleModal}
               className="btn btn-outline-success my-2 mx-1 my-sm-0"
               type="submit"
               onClick={handleAddcolumn}

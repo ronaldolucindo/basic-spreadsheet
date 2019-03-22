@@ -8,12 +8,11 @@ import Table from "./components/Table";
 class App extends Component {
   render() {
     return (
-        <Store>
-          <Header />
-          <Table cols="2" rows="10" />
-
-          <Footer />
-        </Store>
+      <Store>
+        <Header />
+        <Table />
+        <Footer />
+      </Store>
     );
   }
 }

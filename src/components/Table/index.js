@@ -5,18 +5,14 @@ import { StoreContext } from "../../store";
 
 function Table(props) {
   const [state, dispatch] = useContext(StoreContext);
+  if (state.cols === 0) {
+    return null;
+  }
 
-  // console.log(state);
   const rows = [];
   // 1 more row for columns titles
   for (let row = 0; row <= state.rows; row++) {
-    rows.push(
-      <Row
-        key={row}
-        // col={col}
-        row={row}
-      />
-    );
+    rows.push(<Row key={row} row={row} />);
   }
   return (
     <div className="table-responsive">
