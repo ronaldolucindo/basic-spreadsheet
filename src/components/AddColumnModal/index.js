@@ -2,7 +2,6 @@ import React, { useContext, useState, useRef } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { StoreContext } from "../../store";
 
-
 function AddColumnModal({ isOpen, toggleModal }) {
   const [state, dispatch] = useContext(StoreContext);
 
@@ -11,8 +10,6 @@ function AddColumnModal({ isOpen, toggleModal }) {
   const [columnRequired, setColumnRequired] = useState(false);
   const nameRef = useRef(null);
   const typeRef = useRef(null);
-
-
 
   const handleNameChange = e => {
     setColumnName(e.target.value);
